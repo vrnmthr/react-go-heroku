@@ -1,6 +1,6 @@
-// +heroku goVersion go1.11
-
 module github.com/vrnmthr/react-go
+
+go 1.12
 
 require (
 	github.com/gin-contrib/cors v1.3.0
