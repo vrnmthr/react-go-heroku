@@ -1,11 +1,24 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"os"
+	"strconv"
 )
+
+func getPort() int {
+	if port := os.Getenv("PORT"); port == "" {
+		return 5555
+	} else {
+		// port should usually be valid
+		portNum, _ := strconv.Atoi(port)
+		return portNum
+	}
+}
 
 func main() {
 	// Set the router as the default one shipped with Gin
@@ -34,5 +47,7 @@ func main() {
 	}
 
 	// Start the app
-	router.Run(":5555")
+	port := getPort()
+	addr := fmt.Sprintf(":%d", port)
+	router.Run(addr)
 }
