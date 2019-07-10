@@ -1,0 +1,15 @@
+{
+  "name": "react-go",
+  "description": "Bootstrapping for Heroku + Go + React projects",
+  "keywords": [
+    "golang",
+    "react",
+    "heroku"
+  ],
+  "repository": "https://github.com/vrnmthr/react-go",
+  "buildpacks": [
+    {
+      "url": "heroku/go"
+    }
+  ]
+}
