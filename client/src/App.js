@@ -15,7 +15,7 @@ class App extends React.Component {
     }
 
     serverRequest() {
-        axios.get("http://localhost:5555/api/")
+        axios.get("api/")
             .then(res => {
                 this.setState({
                     message: res.data.message

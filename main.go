@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -26,15 +25,6 @@ func main() {
 
 	// Serve the frontend from build under /
 	router.Use(static.Serve("/", static.LocalFile("./client/build/", true)))
-
-	// CORS middleware -- TAKE THIS OUT IN PRODUCTION
-	// The * is a security vulnerability
-	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"*"},
-		AllowHeaders:     []string{"Origin"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-	}))
 
 	// Serve the api under the route group /api/*
 	api := router.Group("/api")
