@@ -1,1 +1,1 @@
-web: react-go
+web: react-go-heroku

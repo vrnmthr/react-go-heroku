@@ -1,4 +1,4 @@
-module github.com/vrnmthr/react-go
+module github.com/vrnmthr/react-go-heroku
 
 go 1.12
 
