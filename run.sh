@@ -5,4 +5,4 @@ npm run build
 cd ../
 
 # run server and start
-go run server/main.go
+go run main.go
